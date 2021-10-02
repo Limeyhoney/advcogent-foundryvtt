@@ -1,0 +1,18 @@
+{
+    "name": "advCogent",
+    "title": "Advanced Combat module for Cogent",
+    "description": "Changes the combat system in cogent to the Advanced Rules.",
+    "author": "Limeyhoney",
+    "version": "0.1.0",
+    "minimumCoreVersion": "0.7.9",
+    "esmodules": [
+        "./advCogent.js"
+    ],
+    "languages": [
+        {
+          "lang": "en",
+          "name": "English",
+          "path": "lang/en.json"
+        }
+    ]
+}

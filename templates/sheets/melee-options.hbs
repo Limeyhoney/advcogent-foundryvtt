@@ -1,0 +1,28 @@
+<section>
+    <td>
+        <select name="data.size">
+            {{#select data.size}}
+            {{#each config.weaponSize as |name type|}}
+            <option value="{{type}}">{{localize name}}</option>
+            {{/each}}
+            {{/select}}
+        </select> 
+    </td>
+    {{#if (or (eq data.size "large") (eq data.size "reach"))}}
+    <td>
+        <input type="checkbox" name="data.speared" style="text-align:center" {{checked data.speared}} title="Has a spear head."/>
+    </td>
+    {{/if}}
+    <td>
+        <input type="checkbox" name="data.hafted" style="text-align:center" {{checked data.hafted}} title="Has an axe head."/> 
+    </td>
+    <td>
+        <input type="checkbox" name="data.blunt" style="text-align:center" {{checked data.blunt}} title="Blunted Impact."/>    
+    </td>
+    <td>
+        <input type="checkbox" name="data.blade" style="text-align:center" {{checked data.blade}} title="Has a sword blade."/>    
+    </td>
+    <td>
+        <input name="data.ammo" type="number" value="{{data.ammo}}" data-dtype="Number" />
+    </td>
+</section>

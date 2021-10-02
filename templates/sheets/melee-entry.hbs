@@ -1,0 +1,48 @@
+<style>
+    .entry {flex:25%}
+</style>
+<tr class="flex">
+    <td title="{{data.description}}" class="entry flex">
+        <div>{{name}}</div>
+        <a class="cogent-acroll" title="Advanced Combat Roll" data-id="{{_id}}">
+            <i class="fas fa-dice" data-id="{{_id}}"></i>
+        </a>
+    </td>
+    <td class="entry">{{localize (sum4 "cogent.attackRange." data.range "" "")}}</td>
+    <td class="entry">{{localize (sum4 "advCogent.weaponSize." data.size "" "")}}</td>
+    <td class="entry rightAlign">
+        <a class="cogent-item-remove" title="Remove Item" data-id="{{_id}}">
+            <i class="fas fa-trash"></i>
+        </a>
+    </td>
+</tr>
+<tr class="flex">
+    {{#if (eq data.speared true)}}
+    <td class="entry">
+        <img src="modules/advCogent/icons/spear.png" title="Speared"></img>
+    </td>
+    {{/if}}
+    {{#if (eq data.hafted true)}}
+    <td class="entry">
+        <img src="modules/advCogent/icons/axe.png" title="Hafted"></img>
+    </td>
+    {{/if}}
+    {{#if (eq data.blunt true)}}
+    <td class="entry">
+        <img src="modules/advCogent/icons/hammer.png" title="Blunted"></img>
+    </td>
+    {{/if}}
+    {{#if (eq data.blade true)}}
+    <td class="entry">
+        <img src="modules/advCogent/icons/sword.png" title="Bladed"></img>
+    </td>
+    {{/if}}
+</tr>
+{{#if (gte data.ammo 0)}}
+<tr>
+    <td title="Ammo" class="entry flex">
+        <div class="inputName">{{localize "cogent.weapon.ammo"}}</div>
+        <input class="input inline-edit" data-id="{{_id}}" data-field="data.ammo" type="number" name="data.ammo" value="{{data.ammo}}" data-dtype="Number" min="0"/>
+    </td>
+</tr>
+{{/if}}

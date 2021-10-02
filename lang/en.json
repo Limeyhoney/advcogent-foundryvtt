@@ -1,0 +1,31 @@
+{
+    "advCogent": {
+        "weapon": {
+            "size": "Size",
+            "speared": "Speared",
+            "hafted": "Hafted",
+            "blunt": "Blunted",
+            "blade": "Bladed",
+            "type": "Type"
+        },
+        "weaponSize": {
+            "small": "Small",
+            "medium": "Medium",
+            "large": "Large",
+            "reach": "Reach",
+            "hand": "Hand",
+            "stocked": "Stocked",
+            "heavy": "Heavy"
+        },
+        "rangedType": {
+            "ballistic": "Ballistic",
+            "flexed": "Flexed"
+        },
+        "combatRoll": {
+            "speared": "Use Speared End?",
+            "hafted": "Use Hafted End?",
+            "blunt": "Use Blunted End?",
+            "blade": "Use Bladed Side?"
+        }
+    }
+}

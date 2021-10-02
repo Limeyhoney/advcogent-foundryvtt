@@ -1,0 +1,6 @@
+<section>
+    <table>
+        {{#if (eq data.range "melee")}}{{> "modules/advCogent/templates/sheets/melee-entry.hbs"}}{{/if}}
+        {{#if (eq data.range "ranged")}}{{> "modules/advCogent/templates/sheets/ranged-entry.hbs"}}{{/if}}
+    </table>
+</section>

@@ -1,0 +1,27 @@
+<style>
+    .entry {flex:20%}
+</style>
+<tr class="flex">
+    <td title="{{data.description}}" class="entry flex">
+        <div>{{name}}</div>
+        <a class="cogent-croll" title="Ranged Attack Roll" data-id="{{_id}}">
+            <i class="fas fa-dice" data-id="{{_id}}"></i>
+        </a>
+    </td>
+    <td class="entry">{{localize (sum4 "cogent.attackRange." data.range "" "")}}</td>
+    <td class="entry">{{localize (sum4 "advCogent.weaponSize." data.size "" "")}}</td>
+    <td class="entry">{{localize (sum4 "advCogent.rangedType." data.rangedType "" "")}}</td>
+    <td class="entry rightAlign">
+        <a class="cogent-item-remove" title="Remove Item" data-id="{{_id}}">
+            <i class="fas fa-trash"></i>
+        </a>
+    </td>
+</tr>
+{{#if (gte data.ammo 0)}}
+<tr>
+    <td title="Ammo" class="entry flex">
+        <div class="inputName">{{localize "cogent.weapon.ammo"}}</div>
+        <input class="input inline-edit" data-id="{{_id}}" data-field="data.ammo" type="number" name="data.ammo" value="{{data.ammo}}" data-dtype="Number" min="0"/>
+    </td>
+</tr>
+{{/if}}

@@ -1,0 +1,38 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
+        <h1><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+    </header>
+    <div>
+        <table style="border-spacing:15px">
+            <tr>
+                <td>{{localize "cogent.weapon.range"}}</td>
+                {{#if (eq data.range "ranged")}}
+                <td style="text-align:center">{{localize "advCogent.weapon.type"}}</td>
+                {{/if}}
+                <td style="text-align:center">{{localize "advCogent.weapon.size"}}</td>
+                {{#if (eq data.range "melee")}}
+                {{#if (or (eq data.size "large") (eq data.size "reach"))}}<td style="text-align:center">{{localize "advCogent.weapon.speared"}}</td>{{/if}}
+                <td style="text-align:center">{{localize "advCogent.weapon.hafted"}}</td>
+                <td style="text-align:center">{{localize "advCogent.weapon.blunt"}}</td>
+                <td style="text-align:center">{{localize "advCogent.weapon.blade"}}</td>
+                {{/if}}
+                
+                <td style="text-align:center">{{localize "cogent.weapon.ammo"}}</td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="data.range">
+                        {{#select data.range}}
+                        {{#each config.attackRange as |name type|}}
+                        <option value="{{type}}">{{localize name}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select>
+                </td>
+                {{#if (eq data.range "melee")}}{{> "modules/advCogent/templates/sheets/melee-options.hbs"}}{{/if}}
+                {{#if (eq data.range "ranged")}}{{> "modules/advCogent/templates/sheets/ranged-options.hbs"}}{{/if}}
+            </tr>
+        </table>
+        <textarea name="data.description">{{data.description}}</textarea>
+</form>
